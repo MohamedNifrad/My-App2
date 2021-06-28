@@ -20,12 +20,15 @@
   <a class="nav-link" *ngIf="loginbtn" routerLink="registration" routerLinkActive="active">Registration</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" *ngIf="loginbtn" routerLink="employees" routerLinkActive="active">Employee</a>
+    </li>
+  <li class="nav-item">
   <a class="nav-link" *ngIf="logoutbtn" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
   </li>
   </ul>
   </div>
   </nav>
   
-  <app-navbar></app-navbar>
+  <!-- <app-navbar></app-navbar> -->
   <router-outlet></router-outlet>
   

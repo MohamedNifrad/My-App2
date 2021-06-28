@@ -18,6 +18,15 @@ import { DataTablesModule } from 'angular-datatables';
 
 //import layouts module
 import { LayoutsModule } from './layouts/layouts.module';
+import { EmployeesComponent } from './employees/employees.component';
+
+
+//fire base
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
+import { EmployeesService } from './services/employees.service'
 
 @NgModule({
   declarations: [
@@ -25,8 +34,10 @@ import { LayoutsModule } from './layouts/layouts.module';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    EmployeesComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,10 +47,14 @@ import { LayoutsModule } from './layouts/layouts.module';
     //import LayoutsModule
     LayoutsModule,
     //
-    DataTablesModule
+    DataTablesModule,
+
+    //fire store
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
 
   ],
-  providers: [],
+  providers: [EmployeesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
